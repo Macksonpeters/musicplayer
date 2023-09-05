@@ -22,80 +22,13 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [flexDirection, setFlexDirection] = useState(false);
 
-  // const url = "https://musicapi13.p.rapidapi.com/search";
-  // const options = {
-  //   method: "POST",
-  //   headers: {
-  //     "content-type": "application/json",
-  //     "X-RapidAPI-Key": "fc5a06a2a0msh9ea0686f8e9b3b8p1c52b8jsn204bdc664fd8",
-  //     "X-RapidAPI-Host": "musicapi13.p.rapidapi.com",
-  //   },
-  //   body: {
-  //     track: "",
-  //     artist: "rihanna",
-  //     type: "track",
-  //     sources: ["spotify", "youtube"],
-  //   },
-  // };
-
-  // fetch(url, options)
-  //   .then((response) => response.json())
-  //   .then((response) => console.log(response));
-
-  // const response = fetch(url, options);
-
-  // const options = {
-  //   method: "POST",
-  //   url: "https://musicapi13.p.rapidapi.com/search",
-  //   headers: {
-  //     "content-type": "application/json",
-  //     "X-RapidAPI-Key": "fc5a06a2a0msh9ea0686f8e9b3b8p1c52b8jsn204bdc664fd8",
-  //     "X-RapidAPI-Host": "musicapi13.p.rapidapi.com",
-  //   },
-  //   data: {
-  //     track: songName,
-  //     artist: "",
-  //     type: "track",
-  //     sources: ["spotify", "youtube"],
-  //   },
-  // };
-
-  // const url = "https://shazam8.p.rapidapi.com/track/search?track=fall&limit=5";
-  // const options = {
-  //   method: "GET",
-  //   headers: {
-  //     "content-type": "application/octet-stream",
-  //     "X-RapidAPI-Key": "402e2d0d7dmsh42acee4a2e3ff59p1342c4jsn3cd1ec27cfb2",
-  //     "X-RapidAPI-Host": "shazam8.p.rapidapi.com",
-  //   },
-  // };
-
-  // const options = {
-  //   method: "GET",
-  //   url: "https://shazam-api6.p.rapidapi.com/shazam/recognize/",
-  //   params: { url: "runaway" },
-  //   headers: {
-  //     "content-type": "application/octet-stream",
-  //     "X-RapidAPI-Key": "402e2d0d7dmsh42acee4a2e3ff59p1342c4jsn3cd1ec27cfb2",
-  //     "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
-  //   },
-  // };
-
-  // const getHandle = async () => {
-  //   try {
-  //     const response = await axios.request(options);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
+  
   const url = `https://shazam-api6.p.rapidapi.com/shazam/search_track/?query=${searchInput}&limit=10`;
   const options = {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
-      "X-RapidAPI-Key": "fc5a06a2a0msh9ea0686f8e9b3b8p1c52b8jsn204bdc664fd8",
+      "X-RapidAPI-Key": "",
       "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
     },
   };
