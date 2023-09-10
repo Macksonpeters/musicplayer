@@ -27,7 +27,6 @@ function App() {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
-      "X-RapidAPI-Key": "",
       "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
     },
   };
@@ -146,7 +145,7 @@ function App() {
               <p className="text-base macksonMusic tracking-widest xl:mt-3 xl:pb-5">Having all genres and type of music, just the best music for you</p>
             </div>
           </div>
-          <div id="playing" className="xl:w-2/4 my-10 p-10 bg-rose-950 rounded font-semibold text-black text-3xl">
+          <div id="playing" className="xl:w-2/4 my-10 p-10 bg-rose-950 rounded font-semibold text-black xl:h-max text-3xl">
             <div className="">
               <span className=" text-white text-xl xl:text-2xl 2xl:text-3xl ">Currently Playing...</span>
             </div>
