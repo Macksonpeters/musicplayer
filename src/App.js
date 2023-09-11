@@ -95,7 +95,7 @@ function App() {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
-      "X-RapidAPI-Key": "fc5a06a2a0msh9ea0686f8e9b3b8p1c52b8jsn204bdc664fd8",
+   
       "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
     },
   };
