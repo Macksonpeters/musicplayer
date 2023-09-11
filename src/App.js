@@ -1,12 +1,12 @@
 import "./App.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { BsMoonStarsFill } from "react-icons/bs";
-import { RiSearchLine } from "react-icons/ri";
-import { FaPlay } from "react-icons/fa";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useRef } from "react";
+import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+import {BsMoonStarsFill} from "react-icons/bs";
+import {RiSearchLine} from "react-icons/ri";
+import {FaPlay} from "react-icons/fa";
+import {AiOutlineLoading3Quarters} from "react-icons/ai";
+import {useRef} from "react";
 import Home from "./Pages/Home";
 import "animate.css";
 
@@ -22,80 +22,12 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [flexDirection, setFlexDirection] = useState(false);
 
-  // const url = "https://musicapi13.p.rapidapi.com/search";
-  // const options = {
-  //   method: "POST",
-  //   headers: {
-  //     "content-type": "application/json",
-  //     "X-RapidAPI-Key": "fc5a06a2a0msh9ea0686f8e9b3b8p1c52b8jsn204bdc664fd8",
-  //     "X-RapidAPI-Host": "musicapi13.p.rapidapi.com",
-  //   },
-  //   body: {
-  //     track: "",
-  //     artist: "rihanna",
-  //     type: "track",
-  //     sources: ["spotify", "youtube"],
-  //   },
-  // };
-
-  // fetch(url, options)
-  //   .then((response) => response.json())
-  //   .then((response) => console.log(response));
-
-  // const response = fetch(url, options);
-
-  // const options = {
-  //   method: "POST",
-  //   url: "https://musicapi13.p.rapidapi.com/search",
-  //   headers: {
-  //     "content-type": "application/json",
-  //     "X-RapidAPI-Key": "fc5a06a2a0msh9ea0686f8e9b3b8p1c52b8jsn204bdc664fd8",
-  //     "X-RapidAPI-Host": "musicapi13.p.rapidapi.com",
-  //   },
-  //   data: {
-  //     track: songName,
-  //     artist: "",
-  //     type: "track",
-  //     sources: ["spotify", "youtube"],
-  //   },
-  // };
-
-  // const url = "https://shazam8.p.rapidapi.com/track/search?track=fall&limit=5";
-  // const options = {
-  //   method: "GET",
-  //   headers: {
-  //     "content-type": "application/octet-stream",
-  //     "X-RapidAPI-Key": "402e2d0d7dmsh42acee4a2e3ff59p1342c4jsn3cd1ec27cfb2",
-  //     "X-RapidAPI-Host": "shazam8.p.rapidapi.com",
-  //   },
-  // };
-
-  // const options = {
-  //   method: "GET",
-  //   url: "https://shazam-api6.p.rapidapi.com/shazam/recognize/",
-  //   params: { url: "runaway" },
-  //   headers: {
-  //     "content-type": "application/octet-stream",
-  //     "X-RapidAPI-Key": "402e2d0d7dmsh42acee4a2e3ff59p1342c4jsn3cd1ec27cfb2",
-  //     "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
-  //   },
-  // };
-
-  // const getHandle = async () => {
-  //   try {
-  //     const response = await axios.request(options);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const url = `https://shazam-api6.p.rapidapi.com/shazam/search_track/?query=${searchInput}&limit=10`;
   const options = {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
-   
+
       "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
     },
   };
@@ -147,13 +79,7 @@ function App() {
   return (
     <div className="h-screen z-0 bg-gray-950 ">
       <div className="bg-gray-950 pt-10 xl:h-auto xl:pb-32">
-        <div
-          className={`text-white   ${
-            flexDirection
-              ? "flex flex-col-reverse animate__animated animate__fadeInLeftBig fixed inset-0 mt-10 overflow-y-scroll xl:flex xl:flex-row "
-              : "block"
-          }   xl:flex xl:justify-center   xl:mx-10 xl:py-10`}
-        >
+        <div className={`text-white   ${flexDirection ? "flex flex-col-reverse animate__animated animate__fadeInLeftBig fixed inset-0 mt-10 overflow-y-scroll xl:flex xl:flex-row " : "block"}   xl:flex xl:justify-center   xl:mx-10 xl:py-10`}>
           <div className="xl:w-2/4 xl:py-10 p-10  ">
             <p className="rounded py-2 px-4 font-semibold text-base xl:text-xl bg-white inline text-rose-700">
               <a href="#searchInput" className="macksonMusic tracking-widest ">
@@ -203,26 +129,10 @@ function App() {
                     : [
                         <div className="bg-rose-950 text-sm py-2 px-2 overflow-y-scroll h-50">
                           {songs.map((song) => (
-                            <div
-                              key={song.actions[0].id}
-                              onClick={() =>
-                                handleProductClick([
-                                  song.actions[0].id,
-                                  song.images.default,
-                                  song.stores.apple.previewurl,
-                                ])
-                              }
-                            >
+                            <div key={song.actions[0].id} onClick={() => handleProductClick([song.actions[0].id, song.images.default, song.stores.apple.previewurl])}>
                               {" "}
                               <button className="py-2  hover:border-b-2 hover:border-white">
-                                <span className="capitalize ">
-                                  {song.alias}
-                                </span>{" "}
-                                {"by"}{" "}
-                                <span className="capitalize font-bold text-grey">
-                                  {" "}
-                                  {song.artists[0].alias}
-                                </span>
+                                <span className="capitalize ">{song.alias}</span> {"by"} <span className="capitalize font-bold text-grey"> {song.artists[0].alias}</span>
                               </button>
                             </div>
                           ))}
@@ -232,22 +142,13 @@ function App() {
               )}
             </div>
             <div className="text-3xl xl:mt-20 ">
-              <h2 className="font-bold text-lg xl:text-6xl pt-5 pb-2 xl:pt-10">
-                Music that inspires you to grow
-              </h2>
-              <p className="text-base macksonMusic tracking-widest xl:mt-3 xl:pb-5">
-                Having all genres and type of music, just the best music for you
-              </p>
+              <h2 className="font-bold text-lg xl:text-4xl 2xl:text-6xl pt-5 pb-2 xl:pt-10">Music that inspires you to grow</h2>
+              <p className="text-base macksonMusic tracking-widest xl:mt-3 xl:pb-5">Having all genres and type of music, just the best music for you</p>
             </div>
           </div>
-          <div
-            id="playing"
-            className="xl:w-2/4 my-10 p-10 bg-rose-950 rounded font-semibold text-black text-3xl"
-          >
+          <div id="playing" className="xl:w-2/4 my-10 p-10 bg-rose-950 rounded font-semibold text-black xl:h-max text-3xl">
             <div className="">
-              <span className=" text-white text-xl xl:text-3xl ">
-                Currently Playing...
-              </span>
+              <span className=" text-white text-xl xl:text-2xl 2xl:text-3xl ">Currently Playing...</span>
             </div>
 
             <div className="my-10 flex  justify-center xl:block animate__fadeInUpBig">
@@ -256,12 +157,7 @@ function App() {
                     <div>
                       <div>
                         {" "}
-                        <img
-                          src={picture}
-                          className="rounded h-38 xl:h-72"
-                          style={styles}
-                          alt=""
-                        />
+                        <img src={picture} className="rounded h-38 xl:h-72" style={styles} alt="" />
                       </div>
                       <div className=" ">
                         {" "}
