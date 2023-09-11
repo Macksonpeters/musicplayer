@@ -27,6 +27,7 @@ function App() {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
+
       "X-RapidAPI-Host": "shazam-api6.p.rapidapi.com",
     },
   };
